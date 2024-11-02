@@ -1,6 +1,6 @@
 # Tarea Damas
 ## Profesor: Juan Antonio Muñoz Almansa
-## Alumno:
+## Alumno: Pedro Donato García López
 
 <h4 class="resaltado_inline" style="text-align: center;">¿Qué te pedimos que hagas?</h4>
 <p>La tarea va a consistir en modelar el movimiento de una dama por el tablero de dicho juego. <strong>Para controlar la posición en de la dama en las casillas del tablero, se utilizarán las coordenadas que vienen dadas en el tablero de ajedrez, por una fila (del "1" al "8") y una columna (de la "a" a la "h").</strong></p>
