@@ -1,5 +1,7 @@
 package org.iesalandalus.programacion.damas.modelo;
 
+import java.security.KeyStore;
+
 public class Dama {
 
     private Color color;
@@ -88,5 +90,29 @@ public class Dama {
         Posicion posicionAleatoria = new Posicion(posicionFila, posicionColumnas);
 
         return posicionAleatoria;
+    }
+
+    public void mover(Direccion direccion, int pasos){
+
+        if (direccion == null) { // Apartado 5.1
+            throw new NullPointerException("La Dirreción no puede ser nula");
+        }
+        // Apartado 5.1.1 (FALTA)
+
+        if (pasos <= 0) { // Apartado 5.2
+            throw new IllegalArgumentException("El número de pasos debe ser mayor que cero.");
+        }
+        if (!this.esDamaEspecial && pasos > 1){ // Apartado 5.2.1.
+            throw new NullPointerException("Movimiento no valido: No es una dama especial");
+        }
+        if ((color.toString().equals("Blanco") && posicion.getFila() == 8) || // Apartado 5.3
+                (color.toString().equals("Negro") && posicion.getFila() == 1)){
+            this.esDamaEspecial = true;
+        }
+
+    }
+
+    public String toString() {
+        return "color=" + color + ", posicion=" + posicion.getFila() + "," + posicion.getColumna();
     }
 }
