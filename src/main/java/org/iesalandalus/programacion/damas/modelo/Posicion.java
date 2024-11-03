@@ -1,5 +1,7 @@
 package org.iesalandalus.programacion.damas.modelo;
 
+import java.util.Objects;
+
 public class Posicion {
     private int fila;
     private char columna;
@@ -33,7 +35,7 @@ public class Posicion {
         this.columna = posicon.columna;
     }
 
-    // Metodos GET
+    // Métodos GET
     public int getFila(){
         return fila;
     }
@@ -42,7 +44,7 @@ public class Posicion {
         return columna;
     }
 
-    // Metodos SET
+    // Métodos SET
     private void setFila(int fila){
         if(fila < FILA_MIN){
             throw new IllegalArgumentException("La fila no puede ser menor a 1");
@@ -57,5 +59,18 @@ public class Posicion {
            throw new IllegalArgumentException("La columna solo puede ser desde a hasta h");
        }
        this.columna = columna;
+    }
+
+    // Métodos equals y hashCode
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Posicion posicion)) return false;
+        return fila == posicion.fila && columna == posicion.columna;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(fila, columna);
     }
 }
