@@ -37,7 +37,7 @@ public class Dama {
 
     public static char columnaAleatoria(int filaFicha){
 
-        int columnaAleatoria = (int) Math.floor(Math.random() * 4) + 1; // Genera un numero aleatorio desde 1 a 4
+        int columnaAleatoria = (int) Math.floor(Math.random() * 4) + 1; // Genera un número aleatorio desde 1 a 4
         char posicionColumna = ' ';
 
         if (filaFicha%2 == 0){
