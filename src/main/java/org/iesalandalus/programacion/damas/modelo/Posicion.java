@@ -30,9 +30,9 @@ public class Posicion {
     }
 
     //Constructor Copia
-    public Posicion(Posicion posicon){
-        this.fila = posicon.fila;
-        this.columna = posicon.columna;
+    public Posicion(Posicion posicion){
+        this.fila = posicion.fila;
+        this.columna = posicion.columna;
     }
 
     // Métodos GET

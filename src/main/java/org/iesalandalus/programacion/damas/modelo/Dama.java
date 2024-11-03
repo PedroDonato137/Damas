@@ -7,14 +7,19 @@ public class Dama {
     private boolean esDamaEspecial;
 
     private static final Color COLOR_INICIAL = Color.BLANCO;
-    private static final int POSICION_INICIAL = (int) Math.floor(Math.random() * 3); // Número aleatorio entre 0 y 2
-    private static final char POSICION_INICIAL_COL = columnaAleatoria(POSICION_INICIAL + 1);
     private static final Boolean DAMAESPECIAL_INICIAL = false;
 
     //Constructor por defecto
     public Dama(){
         this.color = COLOR_INICIAL;
-        this.posicion = new Posicion((POSICION_INICIAL + 1), POSICION_INICIAL_COL); // Al sumarle 1 a la posición inicial se transforma en 1 a 3
+        this.posicion = crearPosicionInicial();
+        this.esDamaEspecial = DAMAESPECIAL_INICIAL;
+    }
+
+    //Contructor para la clase
+    public Dama(Color color){
+        this.color = color;
+        this.posicion = crearPosicionInicial();
         this.esDamaEspecial = DAMAESPECIAL_INICIAL;
     }
 
@@ -64,5 +69,24 @@ public class Dama {
             }
         }
         return posicionColumna;
+    }
+
+    private Posicion crearPosicionInicial(){
+
+        int posicionFila = 0;
+        char posicionColumnas = ' ';
+
+        if(color.toString().equals("Blanco")){
+            posicionFila = (int) Math.floor((Math.random() * 3) + 1); // Genera un número aleatorio entre 1 y 3
+        }
+        else if (color.toString().equals("Negro")){
+            posicionFila = (int) Math.floor((Math.random() * 3) + 6); // Genera un número aleatorio entre 6 y 8
+        }
+
+        posicionColumnas = columnaAleatoria((posicionFila));
+
+        Posicion posicionAleatoria = new Posicion(posicionFila, posicionColumnas);
+
+        return posicionAleatoria;
     }
 }
