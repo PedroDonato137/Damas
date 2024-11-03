@@ -7,6 +7,12 @@ public class Posicion {
     private static final int FILA_MIN = 1;
     private static final int FILA_MAX = 8;
 
+
+    public Posicion(int fila, char columna){
+        setFila(fila);
+        setColumna(columna);
+    }
+
     public int getFila(){
         return fila;
     }
