@@ -27,7 +27,7 @@ public class Posicion {
         return fila;
     }
 
-    public int getColumna(){
+    public char getColumna(){
         return columna;
     }
 
