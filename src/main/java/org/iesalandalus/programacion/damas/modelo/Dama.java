@@ -1,6 +1,6 @@
 package org.iesalandalus.programacion.damas.modelo;
 
-import java.security.KeyStore;
+import java.util.Objects;
 
 public class Dama {
 
@@ -20,6 +20,7 @@ public class Dama {
 
     //Contructor para la clase
     public Dama(Color color){
+        Objects.requireNonNull(color, "ERROR: El color no puede ser nulo.");
         this.color = color;
         this.posicion = crearPosicionInicial();
         this.esDamaEspecial = DAMAESPECIAL_INICIAL;
@@ -95,7 +96,7 @@ public class Dama {
     public void mover(Direccion direccion, int pasos){
 
         if (direccion == null) { // Apartado 5.1
-            throw new NullPointerException("La Dirreción no puede ser nula");
+            throw new NullPointerException("ERROR: La dirección no puede ser nula.");
         }
         // Apartado 5.1.1 (FALTA)
 
@@ -103,7 +104,7 @@ public class Dama {
             throw new IllegalArgumentException("El número de pasos debe ser mayor que cero.");
         }
         if (!this.esDamaEspecial && pasos > 1){ // Apartado 5.2.1.
-            throw new NullPointerException("Movimiento no valido: No es una dama especial");
+            throw new IllegalArgumentException("Movimiento no valido: No es una dama especial");
         }
         if ((color.toString().equals("Blanco") && posicion.getFila() == 8) || // Apartado 5.3
                 (color.toString().equals("Negro") && posicion.getFila() == 1)){
@@ -112,7 +113,7 @@ public class Dama {
 
     }
 
-    public String toString() {
-        return "color=" + color + ", posicion=" + posicion.getFila() + "," + posicion.getColumna();
+    public String toString() { // Apartado 6
+        return "color=" + color + ", posicion=(fila=" + posicion.getFila() + ", columna=" + posicion.getColumna() + ")";
     }
 }

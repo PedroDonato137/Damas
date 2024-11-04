@@ -11,26 +11,13 @@ public class Posicion {
 
     //Constructor
     public Posicion(int fila, char columna){
-
-        //Comprobar fila
-        try{
             setFila(fila);
-        }
-        catch (IllegalArgumentException e){
-            System.out.println("Fila incorrecta: " + e.getMessage());
-        }
-
-        // Comprobar Columna
-        try{
             setColumna(columna);
-        }
-        catch (IllegalArgumentException e) {
-            System.out.println("Columna incorrecta: " + e.getMessage());
-        }
     }
 
     //Constructor Copia
     public Posicion(Posicion posicion){
+        Objects.requireNonNull(posicion, "ERROR: No es posible copiar una posición nula.");
         this.fila = posicion.fila;
         this.columna = posicion.columna;
     }
@@ -47,16 +34,16 @@ public class Posicion {
     // Métodos SET
     private void setFila(int fila){
         if(fila < FILA_MIN){
-            throw new IllegalArgumentException("La fila no puede ser menor a 1");
+            throw new IllegalArgumentException("ERROR: Fila no válida.");
         } else if (fila > FILA_MAX) {
-            throw new IllegalArgumentException("La fila no puede ser mayor a 8");
+            throw new IllegalArgumentException("ERROR: Fila no válida.");
         }
         this.fila = fila;
     }
 
     private void setColumna(char columna){
        if (columna != 'a' && columna != 'b' && columna != 'c' && columna != 'd' && columna != 'e' && columna != 'f' && columna != 'g' && columna != 'h'){
-           throw new IllegalArgumentException("La columna solo puede ser desde a hasta h");
+           throw new IllegalArgumentException("ERROR: Columna no válida.");
        }
        this.columna = columna;
     }
