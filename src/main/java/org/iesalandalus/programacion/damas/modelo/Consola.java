@@ -1,5 +1,7 @@
 package org.iesalandalus.programacion.damas.modelo;
 
+import org.iesalandalus.programacion.utilidades.Entrada;
+
 public class Consola {
 
     //Constructor de la clase
@@ -17,5 +19,20 @@ public class Consola {
         System.out.println("-- 3. Mover                             --");
         System.out.println("-- 4. Salir                             --");
         System.out.println("------------------------------------------");
+        System.out.println();
+    }
+
+    public int elegirOpcionMenu(){
+        int opcionMenu = 0;
+
+        do {
+            System.out.print("Selecciona el numero del menú del juego: ");
+            opcionMenu = Entrada.entero();
+            if(opcionMenu < 0 || opcionMenu > 4){
+                System.out.println("ERROR: Opción incorrecta");
+            }
+        } while(opcionMenu <= 0 || opcionMenu > 4);
+
+        return opcionMenu;
     }
 }
