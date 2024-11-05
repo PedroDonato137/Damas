@@ -5,11 +5,11 @@ import org.iesalandalus.programacion.utilidades.Entrada;
 public class Consola {
 
     //Constructor de la clase
-    private Consola(){ // Apartado 5.1
+    private Consola(){ // Apartado 5.2
 
     }
 
-    public void mostrarMenu(){
+    public void mostrarMenu(){ //Apartado 5.3
         System.out.println("------------------------------------------");
         System.out.println("--              MENÚ DEL JUEGO          --");
         System.out.println("------------------------------------------");
@@ -22,7 +22,7 @@ public class Consola {
         System.out.println();
     }
 
-    public int elegirOpcionMenu(){
+    public int elegirOpcionMenu(){ //Apartado 5.4
         int opcionMenu = 0;
 
         do {
@@ -34,5 +34,25 @@ public class Consola {
         } while(opcionMenu <= 0 || opcionMenu > 4);
 
         return opcionMenu;
+    }
+
+    public Color elegirColor(){ // Apartado 5.5 (elegirOpcion)
+
+        String opcionMenu = " ";
+
+        do {
+            System.out.print("Selecciona el color de la ficha (Blanco/Negro): ");
+            opcionMenu = Entrada.cadena();
+            if(!opcionMenu.equals("Blanco") && !opcionMenu.equals("Negro")){
+                System.out.println("ERROR: Opción incorrecta");
+            }
+        } while(!opcionMenu.equals("Blanco") && !opcionMenu.equals("Negro"));
+
+        if(!opcionMenu.equals("Blanco")){
+           return Color.BLANCO;
+        }else{
+            return Color.NEGRO;
+        }
+
     }
 }
