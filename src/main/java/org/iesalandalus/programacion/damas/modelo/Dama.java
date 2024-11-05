@@ -99,7 +99,6 @@ public class Dama {
 
         int nuevaFila = posicion.getFila();
         char nuevaLetra = posicion.getColumna();
-        //this.esDamaEspecial = true;
 
         int ejeX = 0; // 0 -> Derecha | 1 -> Izquierda || Variable auxiliar para ver la dirreción de la ficha
 
@@ -111,18 +110,6 @@ public class Dama {
         if (!this.esDamaEspecial && pasos != 1) { // Apartado 5.2.1.
             throw new OperationNotSupportedException("ERROR: Las damas normales solo se pueden mover 1 casilla.");
         }
-        if ((color.toString().equalsIgnoreCase("Blanco") && posicion.getFila() == 8) || // Apartado 5.3
-                (color.toString().equalsIgnoreCase("Negro") && posicion.getFila() == 1)) {
-            this.esDamaEspecial = true;
-        }
-        if (!this.esDamaEspecial) { // Apartado 5.4
-            if (color.toString().equalsIgnoreCase("Blanco") && (direccion.toString().equalsIgnoreCase("SURESTE") || direccion.toString().equalsIgnoreCase("SUROESTE"))) {
-                throw new OperationNotSupportedException("ERROR: Movimiento no permitido.");
-            }
-            if (color.toString().equalsIgnoreCase("Negro") && (direccion.toString().equalsIgnoreCase("NORESTE") || direccion.toString().equalsIgnoreCase("NOROESTE"))) {
-                throw new OperationNotSupportedException("ERROR: Movimiento no permitido.");
-            }
-        }
 
         // Método Mover
         if (this.esDamaEspecial) {
@@ -132,9 +119,23 @@ public class Dama {
                 nuevaFila -= pasos;
             }
         } else if (color.toString().equalsIgnoreCase("Blanco")) {
-            nuevaFila++;
+            if (direccion.toString().equalsIgnoreCase("NORESTE") || direccion.toString().equalsIgnoreCase("NOROESTE")){ // Apartado 5.4
+                nuevaFila++;
+                if (nuevaFila == 8) { // Apartado 5.3
+                    this.esDamaEspecial = true;
+                }
+            } else{
+                throw new OperationNotSupportedException("ERROR: Movimiento no permitido.");
+            }
         } else if (color.toString().equalsIgnoreCase("Negro")) {
-            nuevaFila--;
+            if (direccion.toString().equalsIgnoreCase("SURESTE") || direccion.toString().equalsIgnoreCase("SUROESTE")) { // Apartado 5.4
+                nuevaFila--;
+                if (nuevaFila == 1) { // Apartado 5.3
+                    this.esDamaEspecial = true;
+                }
+            }else{
+                throw new OperationNotSupportedException("ERROR: Movimiento no permitido.");
+            }
         }
 
         if(direccion.toString().equalsIgnoreCase("NOROESTE") || direccion.toString().equalsIgnoreCase("SUROESTE")){
