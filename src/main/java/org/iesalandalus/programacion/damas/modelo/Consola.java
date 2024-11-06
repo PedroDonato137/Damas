@@ -36,7 +36,7 @@ public class Consola {
         return opcionMenu;
     }
 
-    public Color elegirColor(){ // Apartado 5.5 (elegirOpcion)
+    public static Color elegirColor(){ // Apartado 5.5 (elegirOpcion)
 
         String opcionMenu = " ";
 

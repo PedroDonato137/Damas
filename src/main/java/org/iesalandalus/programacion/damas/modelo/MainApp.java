@@ -22,4 +22,10 @@ public class MainApp {
         ficha = new Dama();
     }
 
+    private void crearDamaColor(){ // Apartado 6.4
+
+        Color colorSeleccionado = Consola.elegirColor();
+        ficha = new Dama(colorSeleccionado);
+    }
+
 }
