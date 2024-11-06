@@ -92,4 +92,18 @@ public class Consola {
                 return null;
         }
     }
+
+    public int elegirPasos(){ //Apartado 5.8
+        int numeroPasos = 0;
+
+        do {
+            System.out.print("Selecciona el numero de pasos: ");
+            numeroPasos = Entrada.entero();
+            if(numeroPasos <= 0){
+                System.out.println("ERROR: Opción incorrecta");
+            }
+        } while(numeroPasos <= 0);
+
+        return numeroPasos;
+    }
 }
