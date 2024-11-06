@@ -11,8 +11,8 @@ public class MainApp {
 
         int opcionMenu = 0;
 
-        Consola.mostrarMenu();
         do{
+            Consola.mostrarMenu();
             opcionMenu = Consola.elegirOpcionMenu();
             ejecutarOpcion(opcionMenu);
         } while (opcionMenu != 4);

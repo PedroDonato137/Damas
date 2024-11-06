@@ -170,6 +170,8 @@ public class Dama {
                         case 'g':
                             nuevaLetra = 'h';
                             break;
+                        default:
+                            nuevaLetra = ' ';
                     }
                     break;
                 case 1:
@@ -195,6 +197,8 @@ public class Dama {
                         case 'h':
                             nuevaLetra = 'g';
                             break;
+                        default:
+                            nuevaLetra = ' ';
                     }
                     break;
             }
