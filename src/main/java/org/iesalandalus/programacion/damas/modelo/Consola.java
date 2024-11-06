@@ -53,6 +53,18 @@ public class Consola {
         }else{
             return Color.NEGRO;
         }
+    }
 
+    public void mostrarMenuDirecciones(){ //Apartado 5.3
+        System.out.println("------------------------------------------");
+        System.out.println("--              DIRECCIONES             --");
+        System.out.println("------------------------------------------");
+        System.out.println("--                                      --");
+        System.out.println("-- 1. NORESTE                           --");
+        System.out.println("-- 2. SURESTE                           --");
+        System.out.println("-- 3. SUROESTE                          --");
+        System.out.println("-- 4. NOROESTE                          --");
+        System.out.println("------------------------------------------");
+        System.out.println();
     }
 }
