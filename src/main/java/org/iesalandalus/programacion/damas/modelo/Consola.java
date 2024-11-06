@@ -94,7 +94,7 @@ public class Consola {
     }
 
     public int elegirPasos(){ //Apartado 5.8
-        int numeroPasos = 0;
+        int numeroPasos = 1;
 
         do {
             System.out.print("Selecciona el numero de pasos: ");
@@ -105,5 +105,17 @@ public class Consola {
         } while(numeroPasos <= 0);
 
         return numeroPasos;
+    }
+
+    public void despedirse(){ //Apartado 5.9
+        System.out.println("------------------------------------------");
+        System.out.println("--                ADIOS                 --");
+        System.out.println("------------------------------------------");
+        System.out.println("--                                      --");
+        System.out.println("--   THANK YOU FOR PLAYING THIS GAME!   --");
+        System.out.println("--   BUT OUR LADIES IS IN               --");
+        System.out.println("--   ANOTHER CASTLE!                    --");
+        System.out.println("--                                      --");
+        System.out.println("------------------------------------------");
     }
 }
