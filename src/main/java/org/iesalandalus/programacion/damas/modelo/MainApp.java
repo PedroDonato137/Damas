@@ -1,8 +1,11 @@
 package org.iesalandalus.programacion.damas.modelo;
 
+import javax.naming.OperationNotSupportedException;
+import java.io.FileNotFoundException;
+
 public class MainApp {
 
-    private Dama ficha;  // Apartado 6.1
+    private Dama ficha = new Dama();  // Apartado 6.1
 
     private void ejecutarOpcion(int opcion){ //Apartado 6.2
 
@@ -12,10 +15,13 @@ public class MainApp {
                 crearDamaDefecto();
             case 2:
                 // Crear dama eligiendo el color
+                crearDamaColor();
             case 3:
                 // Mover
+                mover();
             case 4:
                 // Salir
+                Consola.despedirse();
         }
     }
     private void crearDamaDefecto(){ // Apartado 6.3
@@ -27,5 +33,24 @@ public class MainApp {
         Color colorSeleccionado = Consola.elegirColor();
         ficha = new Dama(colorSeleccionado);
     }
+
+    private void mover(){ // Apartado 6.5
+
+        int pasos = 1;
+        Consola.mostrarMenuDirecciones();
+        Direccion direccionSeleccionada = Consola.elegirDireccion();
+
+        if(ficha.getDamaespecial()){
+            pasos = Consola.elegirPasos();
+        }
+
+        try {
+            ficha.mover(direccionSeleccionada, pasos);
+        }
+        catch (OperationNotSupportedException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
 
 }

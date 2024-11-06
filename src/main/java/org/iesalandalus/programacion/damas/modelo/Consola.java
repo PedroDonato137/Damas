@@ -9,7 +9,7 @@ public class Consola {
 
     }
 
-    public void mostrarMenu(){ //Apartado 5.3
+    public static void mostrarMenu(){ //Apartado 5.3
         System.out.println("------------------------------------------");
         System.out.println("--              MENÚ DEL JUEGO          --");
         System.out.println("------------------------------------------");
@@ -22,7 +22,7 @@ public class Consola {
         System.out.println();
     }
 
-    public int elegirOpcionMenu(){ //Apartado 5.4
+    public static int elegirOpcionMenu(){ //Apartado 5.4
         int opcionMenu = 0;
 
         do {
@@ -55,7 +55,7 @@ public class Consola {
         }
     }
 
-    public void mostrarMenuDirecciones(){ //Apartado 5.6
+    public static void mostrarMenuDirecciones(){ //Apartado 5.6
         System.out.println("------------------------------------------");
         System.out.println("--              DIRECCIONES             --");
         System.out.println("------------------------------------------");
@@ -68,7 +68,7 @@ public class Consola {
         System.out.println();
     }
 
-    public Direccion elegirDireccion(){ //Apartado 5.7
+    public static Direccion elegirDireccion(){ //Apartado 5.7
         int opcionMenu = 0;
 
         do {
@@ -93,7 +93,7 @@ public class Consola {
         }
     }
 
-    public int elegirPasos(){ //Apartado 5.8
+    public static int elegirPasos(){ //Apartado 5.8
         int numeroPasos = 1;
 
         do {
@@ -107,7 +107,7 @@ public class Consola {
         return numeroPasos;
     }
 
-    public void despedirse(){ //Apartado 5.9
+    public static void despedirse(){ //Apartado 5.9
         System.out.println("------------------------------------------");
         System.out.println("--                ADIOS                 --");
         System.out.println("------------------------------------------");

@@ -36,6 +36,10 @@ public class Dama {
         return posicion;
     }
 
+    public Boolean getDamaespecial(){
+        return esDamaEspecial;
+    }
+
     //Métodos SET
     private void setColor(Color color) {
         this.color = color;
