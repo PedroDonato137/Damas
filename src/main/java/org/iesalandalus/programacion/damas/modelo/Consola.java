@@ -26,7 +26,7 @@ public class Consola {
         int opcionMenu = 0;
 
         do {
-            System.out.print("Selecciona el numero del menú del juego: ");
+            System.out.print("Selecciona que opción quiere realizar: ");
             opcionMenu = Entrada.entero();
             if(opcionMenu < 0 || opcionMenu > 4){
                 System.out.println("ERROR: Opción incorrecta");
@@ -55,7 +55,7 @@ public class Consola {
         }
     }
 
-    public void mostrarMenuDirecciones(){ //Apartado 5.3
+    public void mostrarMenuDirecciones(){ //Apartado 5.6
         System.out.println("------------------------------------------");
         System.out.println("--              DIRECCIONES             --");
         System.out.println("------------------------------------------");
@@ -66,5 +66,30 @@ public class Consola {
         System.out.println("-- 4. NOROESTE                          --");
         System.out.println("------------------------------------------");
         System.out.println();
+    }
+
+    public Direccion elegirDireccion(){ //Apartado 5.7
+        int opcionMenu = 0;
+
+        do {
+            System.out.print("Selecciona que opción quiere realizar: ");
+            opcionMenu = Entrada.entero();
+            if(opcionMenu < 0 || opcionMenu > 4){
+                System.out.println("ERROR: Opción incorrecta");
+            }
+        } while(opcionMenu <= 0 || opcionMenu > 4);
+
+        switch (opcionMenu){
+            case 1:
+                return Direccion.NORESTE;
+            case 2:
+                return Direccion.SURESTE;
+            case 3:
+                return Direccion.SUROESTE;
+            case 4:
+                return Direccion.NOROESTE;
+            default:
+                return null;
+        }
     }
 }
