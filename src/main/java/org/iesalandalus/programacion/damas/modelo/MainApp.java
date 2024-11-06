@@ -6,6 +6,18 @@ public class MainApp {
 
     private Dama ficha;  // Apartado 6.1
 
+    public static void main(String[] args) { // Apartado 6.7
+
+        int opcionMenu = 0;
+
+        Consola.mostrarMenu();
+        do{
+            opcionMenu = Consola.elegirOpcionMenu();
+        } while (opcionMenu != 4);
+
+        Consola.despedirse();
+    }
+
     private void ejecutarOpcion(int opcion){ //Apartado 6.2
 
         switch (opcion){
@@ -57,7 +69,7 @@ public class MainApp {
             String datosDama = ficha.toString();
             System.out.println(datosDama);
         }else{
-            System.out.println("La Dama no esta creada");
+            System.out.println("ERROR: La Dama no esta creada");
         }
     }
 
