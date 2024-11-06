@@ -5,7 +5,7 @@ import org.iesalandalus.programacion.damas.modelo.*;
 
 public class MainApp {
 
-    private Dama ficha;  // Apartado 6.1
+    private static Dama ficha;  // Apartado 6.1
 
     public static void main(String[] args) { // Apartado 6.7
 
@@ -14,39 +14,47 @@ public class MainApp {
         Consola.mostrarMenu();
         do{
             opcionMenu = Consola.elegirOpcionMenu();
+            ejecutarOpcion(opcionMenu);
         } while (opcionMenu != 4);
 
-        Consola.despedirse();
     }
 
-    private void ejecutarOpcion(int opcion){ //Apartado 6.2
+    private static void ejecutarOpcion(int opcion){ //Apartado 6.2
 
         switch (opcion){
             case 1: // Apartado 6.3
                 // Crear dama por defecto
                 crearDamaDefecto();
+                mostrarDama();
+                break;
             case 2:
                 // Crear dama eligiendo el color
                 crearDamaColor();
+                mostrarDama();
+                break;
             case 3:
                 // Mover
                 mover();
+                mostrarDama();
+                break;
             case 4:
                 // Salir
                 Consola.despedirse();
+                break;
         }
     }
-    private void crearDamaDefecto(){ // Apartado 6.3
+    private static void crearDamaDefecto(){ // Apartado 6.3
+
         ficha = new Dama();
     }
 
-    private void crearDamaColor(){ // Apartado 6.4
+    private static void crearDamaColor(){ // Apartado 6.4
 
         Color colorSeleccionado = Consola.elegirColor();
         ficha = new Dama(colorSeleccionado);
     }
 
-    private void mover(){ // Apartado 6.5
+    private static void mover(){ // Apartado 6.5
 
         int pasos = 1;
         Consola.mostrarMenuDirecciones();
@@ -64,7 +72,7 @@ public class MainApp {
         }
     }
 
-    public void mostrarDama(){ // Apartado 6.6
+    public static void mostrarDama(){ // Apartado 6.6
 
         if (ficha != null){
             String datosDama = ficha.toString();
