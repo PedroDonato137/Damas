@@ -48,7 +48,7 @@ public class Consola {
             }
         } while(!opcionMenu.equals("Blanco") && !opcionMenu.equals("Negro"));
 
-        if(!opcionMenu.equals("Blanco")){
+        if(opcionMenu.equals("Blanco")){
            return Color.BLANCO;
         }else{
             return Color.NEGRO;
