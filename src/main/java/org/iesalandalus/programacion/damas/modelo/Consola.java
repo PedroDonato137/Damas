@@ -23,7 +23,7 @@ public class Consola {
     }
 
     public static int elegirOpcionMenu(){ //Apartado 5.4
-        int opcionMenu = 0;
+        int opcionMenu = 1;
 
         do {
             System.out.print("Selecciona que opción quiere realizar: ");
@@ -69,7 +69,7 @@ public class Consola {
     }
 
     public static Direccion elegirDireccion(){ //Apartado 5.7
-        int opcionMenu = 0;
+        int opcionMenu = 1;
 
         do {
             System.out.print("Selecciona que opción quiere realizar: ");

@@ -1,11 +1,10 @@
 package org.iesalandalus.programacion.damas.modelo;
 
 import javax.naming.OperationNotSupportedException;
-import java.io.FileNotFoundException;
 
 public class MainApp {
 
-    private Dama ficha = new Dama();  // Apartado 6.1
+    private Dama ficha;  // Apartado 6.1
 
     private void ejecutarOpcion(int opcion){ //Apartado 6.2
 
@@ -52,5 +51,14 @@ public class MainApp {
         }
     }
 
+    public void mostrarDama(){ // Apartado 6.6
+
+        if (ficha != null){
+            String datosDama = ficha.toString();
+            System.out.println(datosDama);
+        }else{
+            System.out.println("La Dama no esta creada");
+        }
+    }
 
 }
