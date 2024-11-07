@@ -5,18 +5,18 @@ import java.util.Objects;
 
 public class Dama {
 
-    private Color color;
-    private Posicion posicion;
-    private boolean esDamaEspecial;
+    private Color       color;
+    private Posicion    posicion;
+    private boolean     esDamaEspecial;
 
-    private static final Color COLOR_INICIAL = Color.BLANCO;
+    private static final Color   COLOR_INICIAL        = Color.BLANCO;
     private static final Boolean DAMAESPECIAL_INICIAL = false;
 
     //Constructor por defecto
     public Dama() {
         setColor(COLOR_INICIAL);
         setPosicion(crearPosicionInicial());
-        this.esDamaEspecial = DAMAESPECIAL_INICIAL;
+        setEsDamaEspecial(DAMAESPECIAL_INICIAL);
     }
 
     //Contructor para la clase
@@ -24,7 +24,7 @@ public class Dama {
         Objects.requireNonNull(color, "ERROR: El color no puede ser nulo.");
         setColor(color);
         setPosicion(crearPosicionInicial());
-        this.esDamaEspecial = DAMAESPECIAL_INICIAL;
+        setEsDamaEspecial(DAMAESPECIAL_INICIAL);
     }
 
     // Métodos GET
@@ -49,12 +49,16 @@ public class Dama {
         this.posicion = posicion;
     }
 
+    public void setEsDamaEspecial(Boolean esDamaEspecial){
+        this.esDamaEspecial = esDamaEspecial;
+    }
+
     // Métodos crearPosicionInicial
     private Posicion crearPosicionInicial() { // Apartado 4.1
 
-        int posicionFila = 0;
-        int columnaAleatoria = (int) Math.floor(Math.random() * 4) + 1; // Genera un número aleatorio desde 1 a 4
-        char posicionColumna = ' ';
+        int  posicionFila     = 0;
+        int  columnaAleatoria = (int) Math.floor(Math.random() * 4) + 1; // Genera un número aleatorio desde 1 a 4
+        char posicionColumna  = ' ';
 
         if (color.toString().equalsIgnoreCase("Blanco")) {
             posicionFila = (int) Math.floor((Math.random() * 3) + 1); // Genera un número aleatorio entre 1 y 3
@@ -101,7 +105,7 @@ public class Dama {
 
     public void mover(Direccion direccion, int pasos) throws OperationNotSupportedException {
 
-        int nuevaFila = posicion.getFila();
+        int  nuevaFila  = posicion.getFila();
         char nuevaLetra = posicion.getColumna();
 
         int ejeX = 0; // 0 -> Derecha | 1 -> Izquierda || Variable auxiliar para ver la dirreción de la ficha
@@ -126,7 +130,7 @@ public class Dama {
             if (direccion.toString().equalsIgnoreCase("NORESTE") || direccion.toString().equalsIgnoreCase("NOROESTE")){ // Apartado 5.4
                 nuevaFila++;
                 if (nuevaFila == 8) { // Apartado 5.3
-                    this.esDamaEspecial = true;
+                    setEsDamaEspecial(true);
                 }
             } else{
                 throw new OperationNotSupportedException("ERROR: Movimiento no permitido.");
@@ -135,7 +139,7 @@ public class Dama {
             if (direccion.toString().equalsIgnoreCase("SURESTE") || direccion.toString().equalsIgnoreCase("SUROESTE")) { // Apartado 5.4
                 nuevaFila--;
                 if (nuevaFila == 1) { // Apartado 5.3
-                    this.esDamaEspecial = true;
+                    setEsDamaEspecial(true);
                 }
             }else{
                 throw new OperationNotSupportedException("ERROR: Movimiento no permitido.");
