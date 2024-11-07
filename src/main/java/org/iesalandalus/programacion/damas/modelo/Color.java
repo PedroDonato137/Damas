@@ -14,7 +14,7 @@ public enum Color {
     /**
      * Constructor del Enumerado: Este contructor es privado, no deja instanciar ningun objeto de la clase
      *
-     * @param cadenaAMostrar
+     * @param cadenaAMostrar Color
      */
     Color(String cadenaAMostrar){
         this.cadenaAMostrar = cadenaAMostrar;

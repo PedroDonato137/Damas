@@ -16,7 +16,7 @@ public enum Direccion {
 
     /**
      * Contructor del Enumerado: Este contructor es privado, no deja instanciar ningun objeto de la clase
-     * @param cadenaAMostrar
+     * @param cadenaAMostrar Dirección
      */
     Direccion(String cadenaAMostrar){
         this.cadenaAMostrar = cadenaAMostrar;

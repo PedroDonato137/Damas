@@ -28,7 +28,7 @@ public class Posicion {
 
     /**
      * Constructor (Copia) de la clase Poscion: Crea una posición con su fila y su columna
-     * @param posicion
+     * @param posicion Una posición ya creada para reemplazar
      */
     public Posicion(Posicion posicion){
         Objects.requireNonNull(posicion, "ERROR: No es posible copiar una posición nula.");
