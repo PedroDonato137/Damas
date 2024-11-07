@@ -15,10 +15,10 @@ public class Consola {
         System.out.println("--              MENÚ DEL JUEGO          --");
         System.out.println("------------------------------------------");
         System.out.println("--                                      --");
-        System.out.println("-- 1. Crear dama por defecto            --");
-        System.out.println("-- 2. Crear dama eligiendo color        --");
-        System.out.println("-- 3. Mover                             --");
-        System.out.println("-- 4. Salir                             --");
+        System.out.println("-- 1. CREAR DAMA POR DEFECTO            --");
+        System.out.println("-- 2. CREAR DAMA ELIGIENDO COLOR        --");
+        System.out.println("-- 3. MOVER                             --");
+        System.out.println("-- 4. SALIR                             --");
         System.out.println("------------------------------------------");
         System.out.println();
     }
@@ -110,7 +110,7 @@ public class Consola {
 
     public static void despedirse(){ //Apartado 5.9
         System.out.println("------------------------------------------");
-        System.out.println("--                ADIOS                 --");
+        System.out.println("--              GAME OVER               --");
         System.out.println("------------------------------------------");
         System.out.println("--                                      --");
         System.out.println("--   THANK YOU FOR PLAYING THIS GAME!   --");

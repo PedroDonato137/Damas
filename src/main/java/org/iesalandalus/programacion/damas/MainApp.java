@@ -34,8 +34,12 @@ public class MainApp {
                 break;
             case 3:
                 // Mover
-                mover();
-                mostrarDama();
+                if(ficha != null){
+                    mover();
+                    mostrarDama();
+                }else{
+                    System.out.println("ERROR: Dama no creada");
+                }
                 break;
             case 4:
                 // Salir
