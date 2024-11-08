@@ -3,23 +3,38 @@ package org.iesalandalus.programacion.damas.modelo;
 import javax.naming.OperationNotSupportedException;
 import java.util.Objects;
 
+/**
+ * Clase Dama: Esta clase sirve para definir cómo será una Dama
+ *
+ * @author Pedro Donato García López
+ */
+
 public class Dama {
 
     private Color       color;
     private Posicion    posicion;
     private boolean     esDamaEspecial;
 
+    // Valores iniciales definidos por defecto
     private static final Color   COLOR_INICIAL        = Color.BLANCO;
     private static final Boolean DAMAESPECIAL_INICIAL = false;
 
-    //Constructor por defecto
+    /**
+     * Constructor de la clase Dama (por defecto): Crea una dama, simpre blanca, con una posición aleatoria valida
+     * y siempre como dama normal
+     */
     public Dama() {
         setColor(COLOR_INICIAL);
         setPosicion(crearPosicionInicial());
         setEsDamaEspecial(DAMAESPECIAL_INICIAL);
     }
 
-    //Contructor para la clase
+    /**
+     * Constructor de la clase Dama: Crea una dama, del color que recibe, con una posición aleatoria valida
+     * y siempre como dama normal
+     *
+     * @param color El color de la dama
+     */
     public Dama(Color color) {
         Objects.requireNonNull(color, "ERROR: El color no puede ser nulo.");
         setColor(color);
@@ -27,33 +42,67 @@ public class Dama {
         setEsDamaEspecial(DAMAESPECIAL_INICIAL);
     }
 
-    // Métodos GET
+    /**
+     * Método getColor: Devuelve el color de la dama
+     *
+     * @return color El color de la dama
+     */
+
     public Color getColor() {
         return color;
     }
 
+    /**
+     * Método getPosicion: Devuelve la posición completa de la dama
+     *
+     * @return posicion La posición de la dama
+     */
     public Posicion getPosicion() {
         return posicion;
     }
 
+
+    /**
+     * Método getDamaEspecial: Devuelve si la dama es especial o no
+     *
+     * @return esDamaEspecial Si es dama especial -> True || Si no lo es -> False
+     */
     public Boolean getDamaespecial(){
         return esDamaEspecial;
     }
 
-    //Métodos SET
+    /**
+     * Método setColor: Asigna el color a la dama
+     *
+     * @param color El color de la dama
+     */
     private void setColor(Color color) {
         this.color = color;
     }
 
+    /**
+     * Método setPosicion: Asigna una posición a la dama
+     *
+     * @param posicion La posición de la dama
+     */
     public void setPosicion(Posicion posicion) {
         this.posicion = posicion;
     }
 
+    /**
+     * Método setEsDamaEspecial: Asigna si es o no dama especial
+     *
+     * @param esDamaEspecial Si es o no dama especial
+     */
     public void setEsDamaEspecial(Boolean esDamaEspecial){
         this.esDamaEspecial = esDamaEspecial;
     }
 
-    // Métodos crearPosicionInicial
+    /**
+     * Método crearPosicionInicial: Este método crea una posición aleatoria valida usando el método Math.random()
+     *
+     * @return posiconAleatoria Una posición aleatoria valida
+     */
     private Posicion crearPosicionInicial() { // Apartado 4.1
 
         int  posicionFila     = 0;
@@ -103,6 +152,14 @@ public class Dama {
         return posicionAleatoria;
     }
 
+    /**
+     * Método mover: Este método mueve la ficha creada por el tablero, también cambia el atriburo de la clase dama de esDamaEspecial
+     * a true cuando la ficha llega a la ultima fila del tablero
+     *
+     * @param direccion Una dirección donde va a ir la ficha
+     * @param pasos Número de pasos que va a avanzar la ficha
+     * @throws OperationNotSupportedException Validación del movimiento
+     */
     public void mover(Direccion direccion, int pasos) throws OperationNotSupportedException {
 
         int  nuevaFila  = posicion.getFila();
@@ -214,6 +271,12 @@ public class Dama {
         }
     }
 
+
+    /**
+     *Método toString: Devuelve la información de la dama completa
+     *
+     * @return Una cadena de carecteres con el color y la posición
+     */
     public String toString() { // Apartado 6
         return "color=" + color + ", posicion=(fila=" + posicion.getFila() + ", columna=" + posicion.getColumna() + ")";
     }

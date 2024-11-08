@@ -12,6 +12,7 @@ public class Posicion {
     private int fila;
     private char columna;
 
+    // Valores iniciales definidos por defecto
     private static final int FILA_MIN = 1;
     private static final int FILA_MAX = 8;
 
@@ -54,6 +55,12 @@ public class Posicion {
         return columna;
     }
 
+    /**
+     * Método setFila: este método valida que la fila no sea menor que 0 y mayor que 8 , los limites del tablero
+     *
+     * @param fila Una fila valida
+     */
+
     // Métodos SET
     private void setFila(int fila){
         if(fila < FILA_MIN){
@@ -64,6 +71,12 @@ public class Posicion {
         this.fila = fila;
     }
 
+    /**
+     * Método setColumna: Valida que la columna este entre las letras a y h
+     *
+     * @param columna Una columna valida
+     */
+
     private void setColumna(char columna){
        if (columna != 'a' && columna != 'b' && columna != 'c' && columna != 'd' && columna != 'e' && columna != 'f' && columna != 'g' && columna != 'h'){
            throw new IllegalArgumentException("ERROR: Columna no válida.");
@@ -71,7 +84,10 @@ public class Posicion {
        this.columna = columna;
     }
 
-    // Métodos equals y hashCode
+    /**
+     * Métodos equals y hashCode
+     *
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -84,7 +100,11 @@ public class Posicion {
         return Objects.hash(fila, columna);
     }
 
-    //Método toString()
+    /**
+     *Método toString: Devuelve la posición completa de la ficha
+     *
+     * @return Una cadena de carecteres con la posición
+     */
     @Override
     public String toString() {
         return "fila=" + fila + ", columna=" + columna;

@@ -115,8 +115,17 @@ public class MainApp {
     public static void mostrarDama(){ // Apartado 6.6
 
         if (ficha != null){
-            String datosDama = ficha.toString();
-            System.out.println(datosDama);
+            System.out.println("------------------------------------------");
+            System.out.println("--           INFORMACIÓN DAMA           --");
+            System.out.println("------------------------------------------");
+            System.out.println("-- Color: " + ficha.getColor() + "                        --");
+            System.out.println("-- Posición: " + ficha.getPosicion() + "          --");
+            if(ficha.getDamaespecial()) {
+                System.out.println("------------------------------------------");
+                System.out.println("-- Dama especial desbloqueada           --");
+                System.out.println("-- [ + Movimientos Extras ]             --");
+            }
+            System.out.println("------------------------------------------");
         }else{
             System.out.println("ERROR: La Dama no esta creada");
         }

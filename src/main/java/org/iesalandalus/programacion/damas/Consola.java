@@ -30,7 +30,7 @@ public class Consola {
         System.out.println("--                                      --");
         System.out.println("-- 1. CREAR DAMA POR DEFECTO            --");
         System.out.println("-- 2. CREAR DAMA ELIGIENDO COLOR        --");
-        System.out.println("-- 3. MOVER DAMA                        --");
+        System.out.println("-- 3. MOVER                             --");
         System.out.println("-- 4. SALIR                             --");
         System.out.println("------------------------------------------");
         System.out.println();
@@ -158,7 +158,7 @@ public class Consola {
         System.out.println("------------------------------------------");
         System.out.println("--                                      --");
         System.out.println("--   THANK YOU FOR PLAYING THIS GAME!   --");
-        System.out.println("--   BUT OUR LADIES IS IN               --");
+        System.out.println("--   BUT OUR LADIES ARE IN              --");
         System.out.println("--   ANOTHER CASTLE!                    --");
         System.out.println("--                                      --");
         System.out.println("------------------------------------------");
